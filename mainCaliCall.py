@@ -15,7 +15,7 @@ def main():
 
     #  data cleaning
 
-    print(df.head())
+    
 
     mercCordObj = mercFxn.MercFx(df)
     x, y = mercCordObj.mercatorCord()
