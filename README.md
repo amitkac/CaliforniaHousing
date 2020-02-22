@@ -6,9 +6,19 @@
 
 
 # Visualizing California housing dataset on open-map API
- Before you go ahead with the setup, check this cool image out. This is the magic of ` Holoviews -Bokeh` plot.
  
-![](img/Screen2.png)
+ This is the very first dataset that any ML/AI entusiast works on. Most of them will do plotting using matplotlib which is really exciting, however, wouldn't it be better, if  somehow the datapoints could be plotted on a real map.
+
+As I was reviewing ML concepts from (https://github.com/ageron/handson-ml2), a very winderful resource, I thought I should give it a try . So , here is the outcome using `leaflet.js from Bokeh` with `python` .
+ 
+
+<img src= "photos/top.png" align='center' width="600" > 
+
+And here is the zoomed in view, upto street level. Pretty cool!!
+
+<img src= "photos/zoomed.png" align='center' width="600" > 
+
+The circle size in those plots represents the median housing price; so bigger a circle, costlier the house. I also kept the ```median age and median housing price``` in the data tip, which can be modified.
 
 
 ## Table of contents
@@ -18,15 +28,11 @@
 * [Sample output](#sample-output)
 
 ## General info
-This is a simple modular python code that uses open street maps to plot lat-long of California housing dataset. 
-The output is rendered instantly on your default browser and a html file is saved in your directory as `CaliPlot.html` page to visualize it later.
-Also, the plot be saved as `.svg` or `.png`. 
-
-So, what exactly is Akaike Information Criteria (AIC)? especially AIC_c (AIC corrected). For that, check out these cool resources:
-*  Wikipedia- (https://en.wikipedia.org/wiki/Akaike_information_criterion)
-*  Data Science- (https://www.statisticshowto.datasciencecentral.com/akaikes-information-criterion/)
-
-The overall basic idea is to estimate the given distribution parameters using **MLE**, plot the corresponding pdf, and then find out how close is the estimated ditribution close to real distribution using the AIC metric.
+This is a simple modular python code that uses open street maps to plot lat-long of California housing dataset. The circle size represents the median housing price. 
+* Once you run the script `mainCaliCall.py`, the `loadData` class fethces the data from the `URL`, places it in a directory- `housing`, reads it using `pandas` and returns the dataframe by class method.
+* After that,  module- `mercFxn`  is called that changes the lat-long to mercator cordinates. This module is in the class `dataProcessors`. The open maps accept only mercator coordinates, the details of these can be found on this Wikipedia page- (https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system).
+* Once those cordinates are found, `Plotting` class is initialized, that uses different modules of `bokeh` to plot them on an open street map. The map is choosen by the `bokeh.tile_providers`. In case you want to use `google maps`, you can call the google map API fron this  module.
+* Finally, the output is rendered instantly on your ```default browser``` and a html file is saved in your directory as `CaliPlot.html`  that you can use it later. In addition, the plot be saved as `.svg` or `.png`. 
 	
 ## Technologies
 Project is created with:
@@ -38,18 +44,16 @@ Project is created with:
 * Numpy
 	
 ## Setup
-To run this project, download the repository to any folder. Open the folder and run the following commands from command line:
+To run this project, download the repository to any folder. Open the folder and run the following main script from terminal/command line/ide:
 ```
 $python3 mainCaliCall.py 
-
-
-By default, it will read 1<sup>st</sup> column, and will skip 1<sup>st</sup> row as a header. Here is the sample cmd:
-
-
+```
 
 ## Sample output
 
-The output `Bokeh Plot` as an `.html` should look like the below image,  with all the distribution plots. Now, don't forget to try `Pan`, `Box Zoom`, and **my favorite** ` Wheel Zoom`.  Check out the cool `.gif` below, where wheel zooming the data changes all the fitted distributions, and thus removing the need to recode your data.
+Here is an one instance of the map. Check all those big circles near the ocean side than the inland one.
+
+<img src= "photos/CaliData.gif" align='center' > 
 
 
 
