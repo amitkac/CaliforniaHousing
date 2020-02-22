@@ -5,7 +5,7 @@
 [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-373/)
 
 
-# Visualizing California housing dataset on open-map API
+# Visualizing California housing dataset on Open Street Map API
  
  This is the very first dataset that any ML/AI entusiast works on. Most of them will do plotting using matplotlib which is really exciting, however, wouldn't it be better, if  somehow the datapoints could be plotted on a real map.
 
