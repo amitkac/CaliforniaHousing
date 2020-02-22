@@ -9,7 +9,7 @@
  
  This is the very first dataset that any ML/AI entusiast works on. Most of them will do plotting using matplotlib which is really exciting, however, wouldn't it be better, if  somehow the datapoints could be plotted on a real map.
 
-As I was reviewing ML concepts from (https://github.com/ageron/handson-ml2), a very winderful resource, I thought I should give it a try . So , here is the outcome using `leaflet.js from Bokeh` with `python` .
+As I was reviewing ML concepts from (https://github.com/ageron/handson-ml2), a very wonderful resource, I thought I should give it a try . So , here is the outcome using `leaflet.js from Bokeh` with `python` .
  
 
 <img src= "photos/top.png" align='center' width="600" > 
